@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photography Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font (Tailwind's default sans-serif often includes it) -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        /* Custom styles for the modal */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .modal {
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        /* Hide scrollbar when modal is open */ 
+        .modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-tight">Jane Doe Photography</a>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition duration-300">Portfolio</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition duration-300">About</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (optional, kept simple for now) -->
+            <button class="md:hidden text-gray-300 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[70vh] min-h-[400px] flex items-center justify-center text-center text-white">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://placehold.co/1600x900/333/555?text=Your+Best+Shot" 
+                     alt="Hero background image" 
+                     class="w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 bg-gray-900/60"></div>
+            </div>
+            <!-- Hero Content -->
+            <div class="relative z-10 p-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Capturing Moments, Creating Art</h1>
+                <p class="text-lg md:text-xl text-gray-200 drop-shadow-md">Welcome to my personal photography portfolio.</p>
+                <a href="#portfolio" class="mt-8 inline-block bg-white text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Portfolio Gallery Section -->
+        <section id="portfolio" class="py-16 md:py-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Portfolio</h2>
+                
+                <!-- Responsive Image Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    
+                    <!-- Image 1 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/556B2F/FFF?text=Landscape+1" 
+                             alt="Landscape scene" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">Mountain View</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/4682B4/FFF?text=Portrait+1" 
+                             alt="Portrait shot" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">Urban Portrait</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/8B4513/FFF?text=Wildlife+1" 
+                             alt="Wildlife photo" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">Forest Fox</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/1C1C1C/999?text=Street+Art" 
+                             alt="Street art" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">City Graffiti</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 5 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/B0C4DE/333?text=Architecture" 
+                             alt="Architecture" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">Modern Lines</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 6 -->
+                    <div class="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://placehold.co/600x400/708090/FFF?text=Portrait+2" 
+                             alt="Another portrait" 
+                             class="gallery-item w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="font-bold text-lg drop-shadow-md">Candid Shot</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="https://placehold.co/600x600/777/FFF?text=Your+Photo" 
+                             alt="Portrait of Jane Doe"
+                             class="rounded-full shadow-2xl w-64 h-64 md:w-full md:h-auto object-cover mx-auto">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                        <p class="text-lg text-gray-300 mb-4 leading-relaxed">
+                            Hi, I'm Jane Doe, a passionate photographer based in [Your City]. My journey started with a simple film camera, and has grown into a lifelong passion for capturing the beauty in the everyday.
+                        </p>
+                        <p class="text-lg text-gray-300 mb-4 leading-relaxed">
+                            I specialize in [Landscape, Portrait, etc.] photography, striving to create images that are not only visually stunning but also emotionally resonant. For me, photography is about telling stories, one frame at a time.
+                        </p>
+                        <a href="#contact" class="mt-4 inline-block bg-gray-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-900">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Contact Me</h2>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                    Have a project in mind, or just want to say hello? I'd love to hear from you.
+                </p>
+                <!-- Simple Contact Form -->
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 text-left">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full bg-gray-800 border-gray-700 text-white rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 text-left">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full bg-gray-800 border-gray-700 text-white rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 text-left">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full bg-gray-800 border-gray-700 text-white rounded-md shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Jane Doe Photography. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Replace with actual links -->
+                <a href="#" class="hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-white transition duration-300">Twitter</a>
+                <a href="#" class="hover:text-white transition duration-300">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal fixed inset-0 z-[100] w-full h-full flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 invisible opacity-0">
+        <!-- Modal Content -->
+        <div class="modal-content relative w-full max-w-4xl max-h-full rounded-lg overflow-hidden transform scale-95">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-3 right-3 z-50 text-white bg-black/50 rounded-full p-1.5 hover:bg-black/80 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Image -->
+            <img id="modalImage" src="https://placehold.co/1200x800/555/FFF?text=Modal+View" alt="Enlarged portfolio image" class="w-full h-auto max-h-[90vh] object-contain">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Create a slightly larger placeholder URL for the modal
+                    const largeSrc = item.src.replace('600x400', '1200x800');
+                    modalImg.src = largeSrc;
+                    modal.classList.remove('invisible', 'opacity-0');
+                    modal.querySelector('.modal-content').classList.remove('scale-95');
+                    document.body.classList.add('modal-open');
+                });
+            });
+
+            const hideModal = () => {
+                modal.classList.add('invisible', 'opacity-0');
+                modal.querySelector('.modal-content').classList.add('scale-95');
+                document.body.classList.remove('modal-open');
+            };
+
+            closeModal.addEventListener('click', hideModal);
+            
+            // Close modal by clicking on the background
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('invisible')) {
+                    hideModal();
+                }
+            });
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </d>
+</html>
